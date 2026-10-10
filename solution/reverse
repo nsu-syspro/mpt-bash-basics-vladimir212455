@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+len=0
+mass=()
+while read -r line; do
+    mass+=("$line")
+    ((len++))
+done
+
+while (("$len" > 0)); do
+    ((len--)) 
+    printf "%s\n" "${mass[$len]}" 
+done
+ 
